@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "File Manager";
 }
-
+@* @Html.AntiForgeryToken(); *@
 <div id="elfinder"></div>
 
 @section scripts {
@@ -21,6 +21,10 @@
             var options = {
                 baseUrl: '/lib/elfinder/',
                 url: '/el-finder/file-system/connector', // Default (Local File System)
+                // requestType: 'post',
+                // customData: {
+                //     '__RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                // },
                 @*//customData: { folder: '@Model.Folder', subFolder: '@Model.SubFolder' }, // customData passed in every request to the connector as query strings. These values are used in FileController's Index method.*@
                 rememberLastDir: false, // Prevent elFinder saving in the Browser LocalStorage the last visited directory
                 commands: myCommands,

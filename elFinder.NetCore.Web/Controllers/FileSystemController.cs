@@ -6,6 +6,8 @@ namespace elFinder.NetCore.Web.Controllers;
 [Route("el-finder/file-system")]
 public class FileSystemController : Controller
 {
+    //[HttpPost]
+    //[AutoValidateAntiforgeryToken]
     [Route("connector")]
     public async Task<IActionResult> Connector()
     {
